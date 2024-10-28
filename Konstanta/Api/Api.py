@@ -21,7 +21,7 @@ def test_json_print():
 
     # Вывод ответа, через пользовательскую функцию jprint
     print(response.json())
-
+    print(response.status_code)
     # создаем форматированную строку объекта Python JSON
     text = json.dumps(response.json(), sort_keys=True, indent=4)
     print(text)
@@ -30,15 +30,6 @@ def test_json_print():
 def test2():
     response = requests.get("http://api.open-notify.org/astros.json")
 
-    # Вывод ответа, через пользовательскую функцию json_print
-    # print("response:\n{}\n\n".format(response))
-    # print("response.url:\n{}\n\n".format(response.url))  # Посмотреть формат URL (с параметрами)
-    # print("response.headers:\n{}\n\n".format(response.headers))  # Header of the request
-    # print("response.status_code:\n{}\n\n".format(response.status_code))  # Получить код ответа
-    # print("response.text:\n{}\n\n".format(response.text))  # Text Output
-    # print("response.encoding:\n{}\n\n".format(response.encoding))  # Узнать, какую кодировку использует Requests
-    # print("response.content:\n{}\n\n".format(response.content))  # В бинарном виде
-    # print("response.json():\n{}\n\n".format(response.json()))  # JSON Output
 
     print(f"response:\n{response}\n\n")
     print(f"response.url:\n{response.url}\n\n")  # Посмотреть формат URL (с параметрами)
