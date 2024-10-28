@@ -28,17 +28,26 @@ def test_json_print():
 
 
 def test2():
-    response = requests.get("http://api.open-notify.org/iss-pass.json?lat=40.71&lon=-74")
+    response = requests.get("http://api.open-notify.org/astros.json")
 
     # Вывод ответа, через пользовательскую функцию json_print
-    print("response:\n{}\n\n".format(response))
-    print("response.url:\n{}\n\n".format(response.url))  # Посмотреть формат URL (с параметрами)
-    print("response.headers:\n{}\n\n".format(response.headers))  # Header of the request
-    print("response.status_code:\n{}\n\n".format(response.status_code))  # Получить код ответа
-    print("response.text:\n{}\n\n".format(response.text))  # Text Output
-    print("response.encoding:\n{}\n\n".format(response.encoding))  # Узнать, какую кодировку использует Requests
-    print("response.content:\n{}\n\n".format(response.content))  # В бинарном виде
-    print("response.json():\n{}\n\n".format(response.json()))  # JSON Output
+    # print("response:\n{}\n\n".format(response))
+    # print("response.url:\n{}\n\n".format(response.url))  # Посмотреть формат URL (с параметрами)
+    # print("response.headers:\n{}\n\n".format(response.headers))  # Header of the request
+    # print("response.status_code:\n{}\n\n".format(response.status_code))  # Получить код ответа
+    # print("response.text:\n{}\n\n".format(response.text))  # Text Output
+    # print("response.encoding:\n{}\n\n".format(response.encoding))  # Узнать, какую кодировку использует Requests
+    # print("response.content:\n{}\n\n".format(response.content))  # В бинарном виде
+    # print("response.json():\n{}\n\n".format(response.json()))  # JSON Output
+
+    print(f"response:\n{response}\n\n")
+    print(f"response.url:\n{response.url}\n\n")  # Посмотреть формат URL (с параметрами)
+    print(f"response.headers:\n{response.headers}\n\n")  # Header of the request
+    print(f"response.status_code:\n{response.status_code}\n\n")  # Получить код ответа
+    print(f"response.text:\n{response.text}\n\n")  # Text Output
+    print(f"response.encoding:\n{response.encoding}\n\n")  # Узнать, какую кодировку использует Requests
+    print(f"response.content:\n{response.content}\n\n")  # В бинарном виде
+    print(f"response.json():\n{response.json()}\n\n")  # JSON Output
 
 
 """Получаем данные по вакансиям с сайта hh.ru через API с помощью Python Requests Get
