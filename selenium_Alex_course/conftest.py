@@ -8,7 +8,7 @@ import allure
 @pytest.fixture(scope="function")
 def browser():
     options = ChromeOptions()
-    options.add_argument("--window-size=1440,920")
+    # options.add_argument("--window-size=1440,920")
     options.add_argument("--incognito")
     print("\nstart browser for test..")
     browser = webdriver.Chrome()
