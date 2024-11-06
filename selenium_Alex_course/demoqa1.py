@@ -22,7 +22,9 @@ def test_text_box(browser):
 
 
 
-#     check_field = browser.find_element(By.XPATH, '//*[@id="Ad.Plus-970x250-2"]')
+
+
+    #     check_field = browser.find_element(By.XPATH, '//*[@id="Ad.Plus-970x250-2"]')
 #     text = """Name:Vas Kor
 #
 # Email:gamma_h8@bk.ru
@@ -42,3 +44,36 @@ def test_check(browser):
 
     locate_home.click()
     time.sleep(5)
+
+
+    assert browser.find_element(By.CSS_SELECTOR, '[class="rct-checkbox"]').is_selected() is True
+
+
+def test_field(browser):
+    browser.get("https://demoqa.com/text-box")
+    browser.find_element(By.CSS_SELECTOR, '[placeholder = "Full Name"]').send_keys("Olga")
+    browser.find_element(By.CSS_SELECTOR, '[type="email"]').send_keys("olga@gmail.com")
+    browser.find_element(By.CSS_SELECTOR, '[id="currentAddress"]').send_keys("Wroclaw")
+    browser.find_element(By.CSS_SELECTOR, '[id="permanentAddress"]').send_keys('Warsaw')
+
+
+    time.sleep(2)
+    button = browser.find_element(By.XPATH, '//*[text()="Submit"]')
+    browser.execute_script("arguments[0].scrollIntoView();", button)
+    button.click()
+    time.sleep(2)
+
+    check_field = browser.find_element(By.CSS_SELECTOR, '[class="border col-md-12 col-sm-12"]')
+
+    expected_text = (
+    "Name:Olga\n"
+    "Email:olga@gmail.com\n"
+    "Current Address :Wroclaw\n"
+    "Permananet Address :Warsaw")
+
+
+
+    assert check_field.text == expected_text
+
+
+
