@@ -50,7 +50,7 @@ def test_upload_file_2(browser):
     time.sleep(1)
 
     # Формируем путь к файлу для загрузки
-    file_path = os.path.join(os.getcwd(), "bp-atx-6.jpg")
+    file_path = os.path.join(os.getcwd(), "screen.png")
 
     # Отправляем файл в поле загрузки
     browser.find_element(By.XPATH, "//input[@id='uploadFile']").send_keys(file_path)
@@ -73,4 +73,5 @@ file_path = os.path.join(os.path.dirname(__file__), "bp-atx-6.jpg")
 def test_download_file(browser):
     browser.get('https://demoqa.com/upload-download')
     browser.find_element(By.XPATH, '(//a)[3]').click()
+    browser.save_screenshot("screen.png")
     time.sleep(3)
