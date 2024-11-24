@@ -2,6 +2,8 @@ import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture
@@ -22,8 +24,9 @@ def chrome_options():
 @allure.title('Test')
 @pytest.fixture(scope="function")
 def browser(chrome_options):
+    service = Service(ChromeDriverManager().install())
     print("\nstart browser for test..")
-    browser = webdriver.Chrome(options=chrome_options)
+    browser = webdriver.Chrome(service=service, options=chrome_options)
     yield browser
     print("\nquit browser..")
     browser.quit()
