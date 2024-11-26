@@ -41,7 +41,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -n2 --reruns=5
+        pytest -n2 --reruns=5 -sv
       env:
         CI_RUN: true
         PYTHONDONTWRITEBYTECODE: 1
